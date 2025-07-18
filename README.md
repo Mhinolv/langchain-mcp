@@ -7,6 +7,7 @@ A Python project that integrates LangChain with Model Context Protocol (MCP) ada
 - **LangChain Integration**: Leverages LangChain with OpenAI for LLM functionality
 - **MCP Adapters**: Uses LangChain MCP adapters for Model Context Protocol support
 - **LangGraph**: Builds stateful, multi-actor applications with graph-based workflows
+- **MCP Servers**: Includes example math and weather MCP servers
 - **Modern Python**: Built with Python 3.12+ and UV for dependency management
 
 ## Quick Start
@@ -59,9 +60,38 @@ python main.py
 
 ```
 langchain-mcp/
-main.py              # Application entry point
-pyproject.toml       # Project configuration
-uv.lock             # UV lock file
-.env                # Environment variables (create this)
-README.md           # This file
+├── main.py              # Application entry point
+├── pyproject.toml       # Project configuration
+├── uv.lock             # UV lock file
+├── .env                # Environment variables (create this)
+├── CLAUDE.md           # Claude Code project instructions
+├── README.md           # This file
+└── server/             # MCP server modules
+    ├── __init__.py
+    ├── math_server.py   # Math operations MCP server
+    └── weather_server.py # Weather information MCP server
+```
+
+## MCP Servers
+
+The project includes example MCP servers that demonstrate Model Context Protocol functionality:
+
+### Math Server (`server/math_server.py`)
+- **Tools**: `add`, `multiply`
+- **Transport**: stdio
+- **Purpose**: Provides basic mathematical operations
+
+### Weather Server (`server/weather_server.py`)
+- **Tools**: `get_weather`
+- **Transport**: SSE (Server-Sent Events)
+- **Purpose**: Provides weather information for locations
+
+### Running MCP Servers
+
+```bash
+# Run math server
+python server/math_server.py
+
+# Run weather server
+python server/weather_server.py
 ```
