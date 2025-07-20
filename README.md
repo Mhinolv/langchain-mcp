@@ -55,6 +55,7 @@ python main.py
 - `langchain[openai]>=0.3.26`: LangChain with OpenAI integration
 - `langgraph>=0.5.3`: Graph-based application framework
 - `python-dotenv>=1.1.1`: Environment variable management
+- `isort>=6.0.1`: Python import sorting utility
 
 ## Project Structure
 
